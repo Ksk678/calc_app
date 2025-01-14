@@ -8,6 +8,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-route::get('/calcs/hello', [CalcController::class, 'hello']);
-
 Route::get('/calcs/{A}/{B}/{C}', [CalcController::class, 'Result']);

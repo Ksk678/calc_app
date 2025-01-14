@@ -7,28 +7,23 @@ use Illuminate\Http\Request;
 
 class CalcController extends Controller
 {
-    public function hello()
+    public function result($num1, $ope, $num2)
     {
-        return view('Calcs.hello');
-    }
-
-    public function result($A, $B, $C)
-    {
-        if ($B == 'addition') {
-            $result = $A + $C;
+        if ($ope == 'addition') {
+            $result = $num1 + $num2;
         } elseif (
-            $B == 'subtraction'
+            $ope == 'subtraction'
         ) {
-            $result = $A - $C;
+            $result = $num1 - $num2;
         } elseif (
-            $B == 'multiplication'
+            $ope == 'multiplication'
         ) {
-            $result = $A * $C;
+            $result = $num1 * $num2;
         } elseif (
-            $B == 'division'
+            $ope == 'division'
         ) {
-            $result = $A / $C;
+            $result = $num1 / $num2;
         }
-        return view('Calcs.calc', ['result' => $result]);
+        return view('calcs.calc', ['result' => $result]);
     }
 }
